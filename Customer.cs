@@ -60,6 +60,17 @@ namespace Tiny_CRM
             }
             return false;
 
+            /*   public static bool IsAdult(int age)
+        {
+
+            if (age >= 18 && age <= 100)
+            {
+                return true;
+            }
+            return false;
+        }*/
+
+
 
             /* public bool IshighValuedCustomer()
             {
