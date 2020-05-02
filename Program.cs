@@ -17,41 +17,52 @@ namespace Tiny_Crm
             SizeOfList = allLinesText.Count;
             Console.WriteLine(SizeOfList);
 
-
-            List<string> allIds = new List<string>();
-
-            for (int i = 1; i < SizeOfList; i++)
+            foreach(var Id in allLinesText)
             {
-                string[] words = allLinesText[i].Split(';');
-                allIds.Add(words[0]);
-               
+                string[] words = Id.Split(';');
+                var NewProduct = new Product();
+
+                NewProduct.ProductId = words[0];
+                NewProduct.Name = words[1];
+                NewProduct.Description = words[2];
+                NewProduct.Price = GetRandomPrice();
             }
 
 
-            List<string> distinct = allIds.Distinct().ToList();
+            /*
+                        List<string> allIds = new List<string>();
 
-            foreach (string value in distinct)
-            {
-                Console.WriteLine("After: {0}", value);
-            }
+                        for (int i = 1; i < SizeOfList; i++)
+                        {
+                            string[] words = allLinesText[i].Split(';');
+                            allIds.Add(words[0]);
+
+                        }
 
 
-           
-            for (int i = 0; i < SizeOfList; i++)
-            {
-                allLinesText[i] = allLinesText[i] + ";" + GetRandomPrice().ToString();
-                Console.WriteLine(allLinesText[i]);
-            }
+                        List<string> distinct = allIds.Distinct().ToList();
 
+                        foreach (string value in distinct)
+                        {
+                            Console.WriteLine("After: {0}", value);
+                        }
+
+
+
+                        for (int i = 0; i < SizeOfList; i++)
+                        {
+                            allLinesText[i] = allLinesText[i] + ";" + GetRandomPrice().ToString();
+                            Console.WriteLine(allLinesText[i]);
+                        }*/
         }
         public static decimal GetRandomPrice()
-        {
+            {
             var random = new Random();
             var randomNumber = random.NextDouble() * 100;
             var roundedNumber = Math.Round(randomNumber, 2);
 
             return (decimal)roundedNumber;
-        }
+            }
 
     }
 
