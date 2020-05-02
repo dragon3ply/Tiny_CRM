@@ -7,8 +7,9 @@ namespace Tiny_CRM
     public class Customer
     {
         public DateTime Created { get; set; }
+        public string CustomerId { get; set; }
         public string Email { get; set; }
-        public string Vatnum { get; set; }
+        public string Vatnum { get; private set; }
         public string Phone { get; set; }
         public decimal Totalgross { get; private set; }
         public bool IsActive { get; set; }
