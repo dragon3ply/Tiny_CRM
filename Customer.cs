@@ -6,13 +6,19 @@ namespace Tiny_CRM
 {
     public class Customer
     {
-        public DateTime Created { get; set; }
-        public string CustomerId { get; set; }
+        public int CustomerId { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
         public string Email { get; set; }
         public string Vatnum { get; private set; }
         public string Phone { get; set; }
         public decimal Totalgross { get; private set; }
         public bool IsActive { get; set; }
+
+        public DateTime Created { get; set; }
+        public DateTime Dom { get; set; }
+
+        //List<Order> Orders
 
         public Customer(string vatnum)
         {

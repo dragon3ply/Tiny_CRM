@@ -6,8 +6,12 @@ namespace Tiny_CRM
 {
     class Order
     {
-        public string OrderId { get; set; }
-        public string DeliveyAddress { get; set; }
+        public int OrderId { get; set; }
+        public string DeliveryAddress { get; set; }
         public decimal TotalAmount { get; set; }
+
+        //List<string> OrderProduct= new List <string>();
+
+        //Customer Customer
     }
 }

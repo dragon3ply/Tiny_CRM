@@ -3,6 +3,7 @@ using System.IO;
 using Tiny_CRM;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace Tiny_Crm
 {
@@ -10,12 +11,10 @@ namespace Tiny_Crm
     {
         static void Main(string[] args)
         {
+            List<string> allIds = new List<string>();
+
             List<string> allLinesText = File.ReadAllLines(@"C:\Users\drako\devel\Products.txt").ToList();
-
-            int SizeOfList;
-
-            SizeOfList = allLinesText.Count;
-            Console.WriteLine(SizeOfList);
+            
 
             foreach(var Id in allLinesText)
             {
@@ -26,9 +25,19 @@ namespace Tiny_Crm
                 NewProduct.Name = words[1];
                 NewProduct.Description = words[2];
                 NewProduct.Price = GetRandomPrice();
+
+                for (int i = 0; i < allLinesText.Count; i++)
+                {
+                    if (!allIds.Contains(NewProduct.ProductId))
+                    { 
+                    ProductList.add
+                    }
+
+                }
             }
 
-
+            
+            
             /*
                         List<string> allIds = new List<string>();
 
